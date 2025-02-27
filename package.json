@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.8.0",
+    "lucide-react": "^0.476.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "^7.2.0"
+    "react-hook-form": "^7.54.2",
+    "react-router": "^7.2.0",
+    "sweetalert2": "^11.17.2",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
