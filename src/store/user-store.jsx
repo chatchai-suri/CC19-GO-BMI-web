@@ -9,7 +9,7 @@ const userStore = (set) => ({
   challengeData: [],
   actionSurvey_: async(value, token) => {
     try {
-      console.log("Hi")
+      console.log("Hi from user-store")
       const res = await actionSurvey(value, token)
       console.log("res=", res.data.challengeData)
 

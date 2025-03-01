@@ -6,6 +6,7 @@ import { actionSurvey } from "../api/user";
 import { createAlert } from "../utils/createAlert";
 import useAuthStore from "../store/auth-store";
 import useUserStore from "../store/user-store";
+import { Navigate, useNavigate } from "react-router";
 
 const Survey = () => {
   // Zustand
@@ -13,6 +14,8 @@ const Survey = () => {
   const actionSurvey_ = useUserStore((state) => state.actionSurvey_);
   const challengeData = useUserStore((state) => state.challengeData)
   // console.log("token=", token)
+
+  const navigate = useNavigate()
 
   const { register, handleSubmit, formState, reset } = useForm();
   const { isSubmitting, errors } = formState;
@@ -33,10 +36,11 @@ const Survey = () => {
 
     const res = await actionSurvey_(value, token);
     if (res.success) {
-      console.log("*", res.data.challengeData);
-      createAlert("success", message);
+      console.log("*", res);
+      createAlert("success", res.message);
+      navigate("/user/survey-result")
     }else{
-      createAlert("info", message)
+      createAlert("info", res.message)
     }
   };
     console.log("**", challengeData)

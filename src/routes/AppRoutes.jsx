@@ -13,6 +13,8 @@ import Register from "../pages/Register";
 import User from "../pages/User";
 import UserNavBar from "../components/UserNavBar";
 import Layout from "../layout/Layout";
+import SurveyResult from "../pages/SurveyResult";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const AppRoutes = () => {
   return (
@@ -25,11 +27,13 @@ const AppRoutes = () => {
 
         <Route path="user" element={<Layout />}>
           <Route index element={<User />} />
+          <Route path="update-profile" element={<UpdateProfile />} />
           <Route path="survey" element={<Survey />} />
-          <Route path="settarget" element={<SetTarget />} />
-          <Route path="createplan" element={<CreatePlan />} />
-          <Route path="editplan" element={<EditPlan />} />
-          <Route path="editresult" element={<EditResult />} />
+          <Route path="survey-result" element={<SurveyResult />} />
+          <Route path="set-target" element={<SetTarget />} />
+          <Route path="create-plan" element={<CreatePlan />} />
+          <Route path="edit-plan" element={<EditPlan />} />
+          <Route path="edit-result" element={<EditResult />} />
         </Route>
 
 

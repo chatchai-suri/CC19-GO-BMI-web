@@ -6,6 +6,7 @@ import { actionLogin, actionRegister } from "../api/auth";
 import Buttons from "../components/form/Buttons";
 import useAuthStore from "../store/auth-store";
 import { useNavigate } from "react-router";
+import FormInput from "../components/form/FormInput";
 
 const Login = () => {
   //Zustand
@@ -64,12 +65,13 @@ const Login = () => {
         {/* Form */}
         <form onSubmit={handleSubmit(hdlLogin)}>
           <div className="flex flex-col px-2 py-4 gap-4">
-            <input
+            <FormInput register={register} name="identity" placeholder="Email or Mobile no." errors={errors}/>
+            {/* <input
               className="w-full border rounded-lg border-gray-400"
               type="text"
               {...register("identity")}
               placeholder="Email or Moible no."
-            />
+            /> */}
             <input
               className="w-full border rounded-lg border-gray-400"
               type="password"
