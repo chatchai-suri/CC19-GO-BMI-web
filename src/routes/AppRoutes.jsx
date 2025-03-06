@@ -33,7 +33,7 @@ const AppRoutes = () => {
           <Route path="set-target" element={<SetTarget />} />
           <Route path="create-plan" element={<CreatePlan />} />
           <Route path="edit-plan" element={<EditPlan />} />
-          <Route path="edit-result" element={<EditResult />} />
+          <Route path="edit-result/:id" element={<EditResult />} />
         </Route>
 
 

@@ -7,7 +7,7 @@ const SurveyResult = () => {
   let age = 30;
   // Zustand
   const challengeData = useUserStore((state) => state.challengeData);
-  console.log(challengeData);
+  console.log("challengeData=", challengeData);
 
   const navigate = useNavigate()
 
@@ -26,13 +26,13 @@ const SurveyResult = () => {
         {/* servey-data display */}
         <div className="flex flex-col px-2 py-4 gap-4">
           <h1 className="text-lg font-semibold text-emerald-900 text-left">
-            อายุ: {challengeData.age}
+            อายุ: {challengeData?.age}
           </h1>
           <h1 className="text-lg font-semibold text-emerald-900 text-left">
-            อายุ: {challengeData.heightCurrent}
+            ส่วนสูง: {challengeData?.heightCurrent}
           </h1>
           <h1 className="text-lg font-semibold text-emerald-900 text-left">
-            อายุ: {challengeData.weightCurrent}
+            น้ำหนัก: {challengeData?.weightCurrent}
           </h1>
         </div>
       </div>
@@ -42,14 +42,14 @@ const SurveyResult = () => {
           ผลประเมินเบื้องต้น
         </h1>
         {/* servey-data display */}
-        <div className="h-[200px] flex flex-col px-2 py-4 gap-4 bg-slate-50">
+        <div className="h-[200px] overflow-auto flex flex-col px-2 py-4 gap-4 bg-slate-50">
           <p className="text-lg font-semibold text-emerald-900 text-left">
-            ผลประเมิน: {challengeData.surveyResult}
+            ผลประเมิน: {challengeData?.surveyResult}
           </p>
         </div>
         <div className="flex justify-center gap-4 mt-2">
           <Buttons label="ประเมินใหม่" handleClick={() => navigate("/user/survey")} />
-          <Buttons label="ตั้งเป้าหมาย" />
+          <Buttons label="ตั้งเป้าหมาย" handleClick={() => navigate("/user/set-target")}/>
         </div>
       </div>
     </div>

@@ -6,12 +6,12 @@ import { actionSurvey } from "../api/user"
 
 
 const userStore = (set) => ({
-  challengeData: [],
+  challengeData: null,
   actionSurvey_: async(value, token) => {
     try {
       console.log("Hi from user-store")
       const res = await actionSurvey(value, token)
-      console.log("res=", res.data.challengeData)
+      console.log("res=", res.data)
 
       const {challengeData} = res.data
       set({challengeData: challengeData})
@@ -21,6 +21,8 @@ const userStore = (set) => ({
       console.log(error)
       return {success: false, message: "Somthing Wrong!"}
     }
+  },setChallengeData: (data) => {
+    set({challengeData: data})
   }
 })
 

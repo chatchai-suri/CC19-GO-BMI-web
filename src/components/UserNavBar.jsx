@@ -18,13 +18,16 @@ function UserNavBar() {
         <img src={user.profileImage} className="w-8 h-8"/>
       </div>
       <div className="flex gap-4">
-        <Link to="">Current Program</Link>
-        <Link to="">Mission to The Moon</Link>
+        <div className="text-2xl text-rose-900 font-bold"> 
+          <h1>GO BMI</h1>
+        </div>
+        {/* <Link to="">Current Program</Link> */}
+        {/* <Link to="">Mission to The Moon</Link> */}
       </div>
 
       <div className="flex gap-4">
         <Link to="/user/survey"> สร้างโปรแกรมใหม่ </Link>
-        <Link to="/user/editplan"> เลือก/ลบ โปรแกรม </Link>
+        <Link to="/user/edit-plan"> เลือก/ลบ โปรแกรม </Link>
         <Link to="/user/update-profile"> อัปเดทโปรไฟล์ </Link>
       </div>
     </nav>
